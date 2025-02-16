@@ -19,7 +19,7 @@ fun BottomNavGraph(navHostController: NavHostController){
             NewsListScreen(navHostController)
         }
         composable(Screens.SavedNews.route){
-            SavedNewsScreen()
+            SavedNewsScreen(navHostController)
         }
 
         composable(

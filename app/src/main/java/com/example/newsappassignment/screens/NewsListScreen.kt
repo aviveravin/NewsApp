@@ -36,7 +36,7 @@ fun NewsListScreen(
     navHostController: NavHostController,
     viewModel: NewsListViewModel = hiltViewModel()
 ) {
-    val newsList = viewModel.newList.collectAsState()
+    val newsList = viewModel.newsList.collectAsState()
     Scaffold(topBar = { TopAppBar(title = { Text(text = "News") }) }) { padding ->
 
         LazyColumn(modifier = Modifier.padding(padding)) {

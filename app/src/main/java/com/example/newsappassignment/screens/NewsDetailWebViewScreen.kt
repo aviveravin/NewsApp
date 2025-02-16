@@ -29,7 +29,8 @@ import java.nio.charset.StandardCharsets
 @Composable
 fun NewsDetailWebViewScreen(
     navController: NavHostController,
-    article: NewsResponse.Article
+    article: NewsResponse.Article,
+    viewModel: NewsListViewModel = hiltViewModel()
 ) {
 
     val url = article.url
@@ -57,9 +58,10 @@ fun NewsDetailWebViewScreen(
         )
         Button(modifier = Modifier
             .height(50.dp)
+            .padding(start = 50.dp, bottom = 80.dp)
             .fillMaxWidth()
             .weight(0.2f), onClick = {
-            // Handle Save Button Action (if needed)
+            viewModel.saveArticle(article)
         }) {
             Text("Save")
         }
