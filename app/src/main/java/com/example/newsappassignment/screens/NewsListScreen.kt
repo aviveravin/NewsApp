@@ -24,6 +24,7 @@ import androidx.navigation.NavController
 import androidx.navigation.NavHostController
 import coil.compose.rememberAsyncImagePainter
 import com.example.newsappassignment.data.model.NewsResponse
+import com.example.newsappassignment.navigation.Screens
 import com.example.newsappassignment.viewmodel.NewsListViewModel
 import com.google.gson.Gson
 import java.net.URLEncoder
@@ -44,7 +45,7 @@ fun NewsListScreen(
                     val articleJson = Gson().toJson(news)
                     val encodedArticleJson = URLEncoder.encode(articleJson, StandardCharsets.UTF_8.toString())
                     val encodedUrl = URLEncoder.encode(news.url, StandardCharsets.UTF_8.toString())
-                    navHostController.navigate("news_detail/${encodedArticleJson}}")
+                    navHostController.navigate("${Screens.NewsDetail.route}/$encodedArticleJson")
                 }
             }
         }
